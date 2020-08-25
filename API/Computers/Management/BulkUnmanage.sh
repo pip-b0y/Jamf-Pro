@@ -57,13 +57,3 @@ else
 echo "The code you entered was wrong. I am going to terminate my self now"
 exit
 fi
-
-
-
-#DEBUGING
-echo "$jamfurl"
-echo "$jamfuser"
-echo "$jamfpass"
-echo "$jamfgroup"
-echo "$jamfgroup_api"
-echo "$device_id_raw"
