@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>items</key>
+<array>
+<dict>
+<key>assets</key>
+<array>
+<dict>
+<key>kind</key>
+<string>software-package</string>
+<key>md5-size</key>
+<integer>10485760</integer>
+<key>md5s</key>
+<array>
+<string>block 0 here</string>
+<string>block 1 here</string>
+<string>block 2 here</string>
+</array>
+<key>url</key>
+<string>https://yourPackagehostingurl/share/packagename.pkg</string>
+</dict>
+</array>
+</dict>
+</array>
+</dict>
+</plist>
