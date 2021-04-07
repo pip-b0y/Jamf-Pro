@@ -2,6 +2,10 @@
 ##Created by pip-b0y
 ###this is a as is ea.
 ###please note if a user renames a adapter in System Prefs. This EA might not work correclty. Will get the active adapter
+ 
+#Results meaning:
+#none = no ipv6 detected for active connection
+#blank = either has not ran on device or user has renamed the connection ie Wi-Fi to something like Wireless.
 
 
 active_interface=$(route get default | grep interface | awk '{print $2}')
