@@ -34,7 +34,7 @@ mkdir /Users/Shared/MD-VPP-Update/o-data
 
 
 #Script
-app_id=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JSSResource/mobiledeviceapplications | xpath '//mobile_device_application/id' 2>&1 | awk -F'<id>|</id>' '{print $2}')
+app_id=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JSSResource/mobiledeviceapplications | xpath -e '//mobile_device_application/id' 2>&1 | awk -F'<id>|</id>' '{print $2}')
 for id in $app_id;do
 	#backing Up the Apps Incase of roll back
 backup=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JSSResource/mobiledeviceapplications/id/$id -X GET | xmllint --format - > /Users/Shared/MD-VPP-Update/o-data/$id.xml)
@@ -44,7 +44,7 @@ backup=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JS
 
 done
 echo "Starting the MacOS Apps Now"
-mac_app_id_raw=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JSSResource/macapplications | xpath '//mac_application/id' 2>&1 | awk -F'<id>|</id>' '{print $2}')
+mac_app_id_raw=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JSSResource/macapplications | xpath -e '//mac_application/id' 2>&1 | awk -F'<id>|</id>' '{print $2}')
 for mac_app_id in $mac_app_id_raw;do
 	backup2=$(curl -H "Accept: application/xml" -sku $apiuser:$apipassword $jssurl/JSSResource/macapplications/id/$mac_app_id -X GET | xmllint --format - > /Users/Shared/MD-VPP-Update/o-data/$mac_app_id-mac.xml)
 	#Turnoff
